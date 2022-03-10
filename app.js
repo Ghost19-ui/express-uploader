@@ -5,9 +5,9 @@ import cookieParser from 'cookie-parser';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
-
+import secure from 'ssl-express-www';
 const app = express()
-const port = 8000
+const port = process.env.PORT || 8000
 
 // Cretae folder
 if (!fs.existsSync('./public/file')) fs.mkdirSync('./public/file')
@@ -25,7 +25,8 @@ function makeid(length) {
 
 app.set('json spaces', 2)
 app.use(cors())
-app.use(logger('dev'))
+//app.use(logger('dev'))
+app.use(secure)
 app.use(express.json())
 app.use(express.static('public'))
 app.use(express.urlencoded({
