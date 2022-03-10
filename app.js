@@ -1,11 +1,11 @@
-import express from 'express';
-import logger from 'morgan';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
-import multer from 'multer';
-import path from 'path';
-import fs from 'fs';
-import secure from 'ssl-express-www';
+const express = require('express');
+const logger = require('morgan');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const secure = require('ssl-express-www');
 const app = express()
 const port = process.env.PORT || 8000
 
